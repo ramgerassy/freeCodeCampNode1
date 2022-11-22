@@ -9,7 +9,16 @@ const logger = function(req,res,next){
     next()
 }
 
+const dateTimeLogger = function(req,res,next){
+    req.time = new Date().toString()
+    next()
+}
+
 app.use(logger)
+
+app.get("/now",dateTimeLogger(req,res,next),(req,res)=>{
+    res.json({time:req.time})
+})
 
 app.get("/",(req,res)=>{
     //res.send("Hello Express")
