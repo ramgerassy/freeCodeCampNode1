@@ -3,7 +3,7 @@ let app = express();
 
 app.use("/public",express.static(__dirname + '/public'))
 
-app.use((req,res)=>{
+app.use((req,res,next)=>{
     const method = req.method
     const path = req.path
     const ip = req.ip
