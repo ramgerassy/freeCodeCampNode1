@@ -4,10 +4,8 @@ let app = express();
 app.use("/public",express.static(__dirname + '/public'))
 
 const logger = function(req,res,next){
-    const method = req.method
-    const path = req.path
-    const ip = req.ip
-    console.log(`${method} ${path} - ${ip}`)
+    
+    console.log(req.method + " " + req.path + " - " + req.ip)
     next()
 }
 
