@@ -9,9 +9,8 @@ app.get("/",(req,res)=>{
     
 })
 
-app.get("/json",(res,req)=>{
-    const j = {"message":"Hello json"}
-    res.json(j)
+app.get("/json",(req,res)=>{
+    res.json({"message":"Hello json"})
  })
 
 
