@@ -17,7 +17,7 @@ const dateTimeLogger = function(req,res,next){
 app.use(logger)
 
 app.get("/now",dateTimeLogger,(req,res)=>{
-    res.json({time:req.time})
+    res.json({"time":req.time})
 })
 
 app.get("/",(req,res)=>{
@@ -35,35 +35,6 @@ app.get("/json",(req,res)=>{
     } 
     res.json({"message":message})
  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
