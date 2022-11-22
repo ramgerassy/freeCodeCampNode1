@@ -16,7 +16,7 @@ const dateTimeLogger = function(req,res,next){
 
 app.use(logger)
 
-app.get("/now",dateTimeLogger(req,res,next),(req,res)=>{
+app.get("/now",dateTimeLogger,(req,res)=>{
     res.json({time:req.time})
 })
 
@@ -31,7 +31,6 @@ app.get("/json",(req,res)=>{
     console.log(process.env.MESSAGE_STYLE)
     if(process.env.MESSAGE_STYLE === "uppercase")  
     {
-        console.log("i am here")
         message = message.toUpperCase()
     } 
     res.json({"message":message})
