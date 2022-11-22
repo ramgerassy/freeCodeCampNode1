@@ -12,8 +12,7 @@ app.get("/",(req,res)=>{
 app.get("/json",(res,req)=>{
     const j = {"message":"Hello json"}
     res.json(j)
-    res.send(j)
-})
+ })
 
 
 
