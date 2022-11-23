@@ -9,21 +9,21 @@ const logger = function(req,res,next){
     next()
 }
 
-const dateTimeLogger = function(req,res,next){
-    req.time = new Date().toString()
-    next()
-}
+
 
 app.use(logger)
-
-app.get("/now",dateTimeLogger,(req,res)=>{
-    res.json({"time":req.time})
-})
 
 app.get("/",(req,res)=>{
     //res.send("Hello Express")
     res.sendfile(__dirname + '/views/index.html')
     
+})
+
+app.get("/now",function(req,res,next){
+    req.time = new Date().toString()
+    next()
+},(req,res)=>{
+    res.json({time : req.time})
 })
 
 app.get("/json",(req,res)=>{
