@@ -47,6 +47,6 @@ const nameHandler = function(req,res){
     res.json({'name': first + " " + last})
 }
 
-app.route('/name?first=firstname&last=lastname').get(nameHandler).post(nameHandler)
+app.route('/name').get(nameHandler).post(nameHandler)
 
  module.exports = app;
