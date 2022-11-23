@@ -50,6 +50,11 @@ const nameHandler = function(req,res){
     res.json({'name': first + " " + last})
 }
 
-app.route('/name').get(nameHandler).post(nameHandler)
+app.route('/name').get(nameHandler)
+.post((req,res)=>{
+    const first = req.body.first
+    const last = req.body.last
+    res.json({'name': first + " " + last})
+})
 
  module.exports = app;
